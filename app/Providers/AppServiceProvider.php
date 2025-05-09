@@ -23,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
-        offer::where('end_date','<',now())->delete();
+        Offer::where('end_date','<',now())->delete();
     }
 }

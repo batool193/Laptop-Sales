@@ -12,6 +12,8 @@ use App\Http\Controllers\FquestionController;
 use App\Http\Controllers\AttachementController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\BuyController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +79,10 @@ Route::get('/question', [FquestionController::class, 'index'])->name('question.i
 Route::get('/question/{question}', [FquestionController::class, 'show'])->name('question.show');
 Route::get('/offers', [OfferController::class, 'index'])->name('offers.index');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/buy/{laptop}', [BuyController::class, 'showForm'])->name('buy.form');
+Route::post('/buy/{laptop}', [BuyController::class, 'processOrder'])->name('buy.process');
+
 
 
 

@@ -22,8 +22,9 @@ class Offer extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'price' => 'unsignedDecimal',
-    ];
+        'discount_percentage' => 'decimal:2',
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',    ];
     public function laptop()
     {
         return $this->belongsTo(Laptop::class);

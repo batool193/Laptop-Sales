@@ -1,5 +1,9 @@
 @extends('layouts.layout')
-
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 @section('content')
 <div>
     <h1 class="mb-4">Laptops List</h1>
